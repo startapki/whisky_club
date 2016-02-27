@@ -6,9 +6,13 @@ h1
     .panel.panel-default.item
       .panel-heading
         = item.title
+
       .panel-body
         = image_tag item.image.url
 
         div.description
           =m item.description
 
+      - if current_user.present?
+        .panel-footer
+          = render 'ratings/form', rating: current_user.ratings.find_or_initialize_by(item: item)
