@@ -3,9 +3,7 @@ engines:
   brakeman:
     enabled: true
   bundler-audit:
-    enabled: true
-    exclude_paths:
-    - Gemfile.lock
+    enabled: false
   csslint:
     enabled: true
   coffeelint:
