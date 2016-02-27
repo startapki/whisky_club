@@ -19,6 +19,10 @@ nav#navbar.navbar.navbar-default role="navigation"
               => current_user.email
               b.caret
             ul.dropdown-menu
+              - if current_user.admin?
+                li
+                  = link_to admin_root_path, data: { turbolinks: false }
+                    =t 'nav.admin'
               li
                 = link_to destroy_user_session_path, method: :delete
                   =t 'nav.logout'
