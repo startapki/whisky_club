@@ -46,7 +46,7 @@ group :development do
 end
 
 group :test do
-  gem "codeclimate-test-reporter", '~> 0.4.8', require: nil
+  gem 'codeclimate-test-reporter', '~> 0.4.8', require: nil
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
