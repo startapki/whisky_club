@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :meetings
     resources :items
+    resources :users
 
     root to: "meetings#index"
   end
