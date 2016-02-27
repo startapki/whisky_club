@@ -3,11 +3,11 @@
 one:
   title: MyText
   description: MyText
-  user: one
+  meeting: one
   position: 1
 
 two:
   title: MyText
   description: MyText
-  user: two
+  meeting: two
   position: 1
