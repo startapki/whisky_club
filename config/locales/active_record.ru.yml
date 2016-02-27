@@ -4,12 +4,37 @@ ru:
       user:
         one: 'Пользователь'
         few: 'Пользователя'
-        many: 'Пользователей'
-        other: 'Пользователи'
+        many: 'Пользователи'
+        other: 'Пользователей'
+      meeting:
+        one: 'Заседание'
+        few: 'Заседания'
+        many: 'Заседания'
+        other: 'Заседаний'
+      item:
+        one: 'Бутылка'
+        few: 'Бутылки'
+        many: 'Бутылки'
+        other: 'Бутылок'
 
     attributes:
       user:
+        name: 'Имя'
         email: 'Почта'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
         remember_me: 'Запомнить меня'
+      meeting:
+        title: 'Название'
+        items: 'Бутылки'
+        created_at: 'Создано'
+        updated_at: 'Обновлено'
+      item:
+        title: 'Название'
+        description: 'Описание'
+        meeting: 'Заседание'
+        meeting_id: 'Заседание'
+        image: 'Изображение'
+        position: 'Позиция'
+        created_at: 'Создано'
+        updated_at: 'Обновлено'
