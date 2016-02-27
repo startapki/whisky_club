@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+    - 'Guardfile'
+
+Metrics/LineLength:
+  Max: 110
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
