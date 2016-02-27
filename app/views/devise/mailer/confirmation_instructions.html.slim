@@ -1,11 +1,11 @@
 p
-  = t '.welcome'
+  =t '.welcome'
   =< @email
   | !
 
 p
-  = t '.confirm_account_email_through_the_link'
+  =t '.confirm_account_email_through_the_link'
 
 p
   = link_to confirmation_url(@resource, confirmation_token: @token)
-    = t '.confirm_account'
+    =t '.confirm_account'

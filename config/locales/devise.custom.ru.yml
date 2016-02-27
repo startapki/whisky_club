@@ -20,6 +20,9 @@ ru:
         account_locked: 'Ваш аккаунт заблокирован, после чрезмерного количества неуспешных попыток войти.'
         click_to_unlock: 'Нажмите ссылку ниже, чтобы разблокировать аккаунт:'
         unlock_account: 'Разблокировать мой аккаунт'
+      password_change:
+        hello: 'Здравствуйте'
+        password_changed: 'We''re contacting you to notify you that your password has been changed.'
 
     passwords:
       edit:
