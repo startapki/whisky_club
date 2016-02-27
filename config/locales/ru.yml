@@ -2,3 +2,6 @@ ru:
   nav:
     sign_in: 'Войти'
     logout: 'Выйти'
+  home:
+    empty:
+      no_meetings: 'Нет заседаний'
