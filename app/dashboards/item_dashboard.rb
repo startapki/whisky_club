@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class ItemDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -14,8 +14,8 @@ class ItemDashboard < Administrate::BaseDashboard
     description: Field::Text,
     position: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -25,8 +25,8 @@ class ItemDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :meeting,
     :title,
-    :description,
-  ]
+    :description
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -37,8 +37,8 @@ class ItemDashboard < Administrate::BaseDashboard
     :description,
     :position,
     :created_at,
-    :updated_at,
-  ]
+    :updated_at
+  ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -47,8 +47,8 @@ class ItemDashboard < Administrate::BaseDashboard
     :meeting,
     :title,
     :description,
-    :position,
-  ]
+    :position
+  ].freeze
 
   # Overwrite this method to customize how items are displayed
   # across all pages of the admin dashboard.
