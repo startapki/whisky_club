@@ -11,3 +11,4 @@ script:
 addons:
   code_climate:
     repo_token: 56d198854bfcff200d010a85
+notifications: never
