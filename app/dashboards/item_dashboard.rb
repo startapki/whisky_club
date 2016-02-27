@@ -12,6 +12,7 @@ class ItemDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
+    image: Field::Image,
     position: Field::PositionField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -33,7 +34,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :meeting,
-    :id,
+    :image,
     :title,
     :description,
     :position,
@@ -48,6 +49,7 @@ class ItemDashboard < Administrate::BaseDashboard
     :meeting,
     :title,
     :description,
+    :image,
     :position
   ].freeze
 
