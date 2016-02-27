@@ -22,6 +22,7 @@ class MeetingDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :title,
+    :items,
     :created_at,
     :updated_at
   ].freeze

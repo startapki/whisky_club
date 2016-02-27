@@ -12,7 +12,7 @@ class ItemDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
-    position: Field::Number,
+    position: Field::PositionField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -25,7 +25,8 @@ class ItemDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :meeting,
     :title,
-    :description
+    :description,
+    :position
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
