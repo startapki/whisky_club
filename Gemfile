@@ -27,6 +27,7 @@ gem 'devise', '4.0.0.rc1'
 gem 'devise_invitable', github: 'scambra/devise_invitable'
 
 gem 'administrate', github: 'hayesr/administrate', branch: 'rails5_compat'
+gem 'acts_as_list', '~> 0.7.2'
 
 group :development, :test do
   gem 'byebug'
