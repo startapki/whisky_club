@@ -5,6 +5,7 @@ AllCops:
     - 'db/migrate/*'
     - 'vendor/**/*'
     - 'Guardfile'
+    - 'db/schema.rb'
 
 Metrics/LineLength:
   Max: 110

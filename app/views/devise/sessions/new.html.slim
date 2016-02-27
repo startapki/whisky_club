@@ -1,0 +1,14 @@
+.panel.panel-primary
+  .panel-heading
+    h3.panel-title
+      = t '.sign_in'
+
+  .panel-body
+    = bootstrap_form_for resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' } do |f|
+      = f.email_field :email, autofocus: true
+      = f.password_field :password, autocomplete: 'off'
+      = f.check_box :remember_me
+      = f.submit t('.sign_in')
+
+  .panel-footer
+    = render 'devise/shared/links'

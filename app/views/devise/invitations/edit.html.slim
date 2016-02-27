@@ -1,0 +1,12 @@
+.panel.panel-primary
+  .panel-heading
+    h3.panel-title
+      = t 'devise.invitations.edit.header'
+
+  .panel-body
+    = bootstrap_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put, role: 'form' } do |f|
+
+      = f.password_field :password
+      = f.password_field :password_confirmation
+
+      = f.submit t('devise.invitations.edit.submit_button')
