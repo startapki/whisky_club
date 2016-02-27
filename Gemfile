@@ -36,6 +36,8 @@ gem 'carrierwave-postgresql'
 gem 'postgresql_lo_streamer'
 gem 'mini_magick'
 
+gem 'redcarpet'
+
 group :development, :test do
   gem 'byebug'
 end
