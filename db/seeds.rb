@@ -1,5 +1,15 @@
+User.destroy_all
+Meeting.destroy_all
+
 User.create!(
   email: 'user@example.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+User.create!(
+  email: 'admin@example.com',
+  admin: true,
   password: 'password',
   password_confirmation: 'password'
 )
