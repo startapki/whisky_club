@@ -1,0 +1,5 @@
+- if f.object.persisted?
+  .field-unit__label
+    = f.label field.attribute
+  .field-unit__field
+    = f.select field.attribute, (1..f.object.meeting.items.count)
