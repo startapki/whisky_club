@@ -1,0 +1,58 @@
+ru:
+  devise:
+    confirmations:
+      new:
+        resend_confirm_instructions: 'Переслать инстукции подтверждения'
+
+    mailer:
+      confirmation_instructions:
+        welcome: 'Добро пожаловать'
+        confirm_account_email_through_the_link: 'Вы можете подтвердить електронный адрес по ссылке:'
+        confirm_account: 'Подтвердить регистрацию'
+      reset_password_instructions:
+        hello: 'Здравствуйте'
+        link_to_change_password: 'Был запрос изменения пароля. Вы можете сделать это перейдя по ссылке ниже.'
+        change_password: 'Изменить мой пароль'
+        ignore_email: "Если вы не делали такой запрос, пожалуйста, игнорируйте это письмо."
+        create_new_password: "Ваш пароль не измениться, пока вы не перейдете по ссылке выше и не создадите новый"
+      unlock_instructions:
+        hello: 'Здравствуйте'
+        account_locked: 'Ваш аккаунт заблокирован, после чрезмерного количества неуспешных попыток войти.'
+        click_to_unlock: 'Нажмите ссылку ниже, чтобы разблокировать аккаунт:'
+        unlock_account: 'Разблокировать мой аккаунт'
+
+    passwords:
+      edit:
+        new_password: 'Новый пароль'
+        change_your_password: 'Изменить Ваш пароль'
+        confirm_new_password: 'Подтвердить новый пароль'
+        change_my_password: 'Изменить мой пароль'
+      new:
+        forgot_password: 'Вы забыли пароль?'
+        send_reset_password_instructions: 'Выслать инструкции для смены пароля'
+
+    registrations:
+      new:
+        sign_up: 'Регистрация'
+      edit:
+        edit: 'Редактирование'
+        unhappy: 'Что-то не так?'
+        update: 'Обновить'
+        сancel_account: 'Удалить мой аккаунт'
+        back: 'Назад'
+        currently_waiting_confirmation: 'Ожидается подтверждение для:'
+        current_password_need: 'нам нужен Ваш текущий пароль чтобы подтвердить изменения'
+        leave_blank: 'оставте пустым, если не хотите изменять'
+
+    sessions:
+      new:
+        sign_in: 'Войти'
+
+    shared:
+      links:
+        sign_up: 'Регистрация'
+        sign_in: 'Войти'
+        forgot_password: 'Забыли пароль?'
+        not_receive_confirmation_instructions: "Не получили инструкции подтверждения?"
+
+

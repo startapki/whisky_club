@@ -8,8 +8,18 @@ Bundler.require(*Rails.groups)
 
 module WhiskyClub
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.i18n.default_locale = :ru
+
+    config.to_prepare do
+      [
+        Devise::SessionsController,
+        Devise::RegistrationsController,
+        Devise::ConfirmationsController,
+        Devise::UnlocksController,
+        Devise::PasswordsController
+      ].each { |controller| controller.layout 'devise' }
+
+      Devise::Mailer.layout 'mail'
+    end
   end
 end

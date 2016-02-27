@@ -1,0 +1,10 @@
+- unless notice.blank?
+  .alert.alert-info.alert-dismissable
+    button.close type="button" data-dismiss="alert" aria-hidden="true"
+      '&times;
+    = notice
+- unless alert.blank?
+  .alert.alert-danger.alert-dismissable
+    button.close type="button" data-dismiss="alert" aria-hidden="true"
+      '&times;
+    = alert

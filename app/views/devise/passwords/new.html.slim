@@ -1,0 +1,12 @@
+.panel.panel-primary
+  .panel-heading
+    h3.panel-title
+      = t '.forgot_password'
+
+  .panel-body
+    = bootstrap_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: 'form' } do |f|
+      = f.email_field :email, autofocus: true
+      = f.submit t('.send_reset_password_instructions')
+
+  .panel-footer
+    = render 'devise/shared/links'

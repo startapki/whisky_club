@@ -1,0 +1,8 @@
+ru:
+  helpers:
+    select:
+      prompt: "Пожалуйста выберите"
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+      submit: "Сохранить %{model}"

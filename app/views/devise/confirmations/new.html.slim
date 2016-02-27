@@ -1,0 +1,12 @@
+.panel.panel-primary
+  .panel-heading
+    h3.panel-title
+      = t '.resend_confirm_instructions'
+
+  .panel-body
+    = bootstrap_form_for resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, role: 'form' } do |f|
+      = f.email_field :email, autofocus: true
+      = f.submit t('.resend_confirm_instructions')
+
+  .panel-footer
+    = render 'devise/shared/links'

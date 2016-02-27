@@ -1,0 +1,9 @@
+- if controller_name != 'sessions'
+  = link_to new_session_path(resource_name)
+    = t '.sign_in'
+  br
+
+- if controller_name != 'passwords' && controller_name != 'registrations'
+  = link_to new_password_path(resource_name)
+    = t '.forgot_password'
+  br

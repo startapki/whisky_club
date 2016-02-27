@@ -1,0 +1,56 @@
+en:
+  devise:
+    confirmations:
+      new:
+        resend_confirm_instructions: 'Resend confirmation instructions'
+
+    mailer:
+      confirmation_instructions:
+        welcome: 'Welcome'
+        confirm_account_email_through_the_link: 'You can confirm your account email through the link below:'
+        confirm_account: 'Confirm my account'
+      reset_password_instructions:
+        hello: 'Hello'
+        link_to_change_password: 'Someone has requested a link to change your password. You can do this through the link below.'
+        change_password: 'Change my password'
+        ignore_email: "If you didn't request this, please ignore this email."
+        create_new_password: "Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        hello: 'Hello'
+        account_locked: 'Your account has been locked due to an excessive number of unsuccessful sign in attempts.'
+        click_to_unlock: 'Click the link below to unlock your account:'
+        unlock_account: 'Unlock my account'
+
+    passwords:
+      edit:
+        change_your_password: 'Change your password'
+        confirm_new_password: 'Confirm new password'
+        change_my_password: 'Change my password'
+      new:
+        forgot_password: 'Forgot your password?'
+        send_reset_password_instructions: 'Send me reset password instructions'
+
+    registrations:
+      new:
+        sign_up: 'Sign up'
+      edit:
+        edit: 'Edit'
+        unhappy: 'Unhappy?'
+        update: 'Update'
+        сancel_account: 'Cancel account'
+        back: 'Back'
+        currently_waiting_confirmation: 'Currently waiting confirmation for:'
+        current_password_need: 'Current password need'
+        leave_blank: 'leave blank if nothing to change'
+
+    sessions:
+      new:
+        sign_up: 'Sign up'
+        sign_in: 'Sign in'
+
+    shared:
+      links:
+        sign_up: 'Sign up'
+        sign_in: 'Sign in'
+        forgot_password: 'Forgot your password?'
+        not_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
