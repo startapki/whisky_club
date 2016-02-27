@@ -1,6 +1,6 @@
-require 'administrate/base_dashboard'
+require "administrate/base_dashboard"
 
-class MeetingDashboard < Administrate::BaseDashboard
+class ItemDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,12 +8,14 @@ class MeetingDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    meeting: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
-    items: Field::HasMany,
+    description: Field::Text,
+    position: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
-  }.freeze
+    updated_at: Field::DateTime,
+  }
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -21,29 +23,37 @@ class MeetingDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :meeting,
     :title,
-    :created_at,
-    :updated_at
-  ].freeze
+    :description,
+  ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :meeting,
+    :id,
     :title,
-    :items
-  ].freeze
+    :description,
+    :position,
+    :created_at,
+    :updated_at,
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :title
-  ].freeze
+    :meeting,
+    :title,
+    :description,
+    :position,
+  ]
 
-  # Overwrite this method to customize how meetings are displayed
+  # Overwrite this method to customize how items are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(meeting)
-  #   "Meeting ##{meeting.id}"
+  # def display_resource(item)
+  #   "Item ##{item.id}"
   # end
 end
