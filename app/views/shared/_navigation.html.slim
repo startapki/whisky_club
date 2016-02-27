@@ -22,9 +22,11 @@ nav#navbar.navbar.navbar-default role="navigation"
               - if current_user.admin?
                 li
                   = link_to admin_root_path, data: { turbolinks: false }
+                    .glyphicon.glyphicon-cog
                     =t 'nav.admin'
               li
                 = link_to destroy_user_session_path, method: :delete
+                  .glyphicon.glyphicon-off
                   =t 'nav.logout'
         - else
           li
