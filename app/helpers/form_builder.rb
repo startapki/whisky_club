@@ -20,7 +20,7 @@ class FormBuilder < ActionView::Helpers::FormBuilder
       $('##{raty_id}').raty({
         half: true,
         targetScore: '##{id}',
-        score: #{value}
+        score: #{value || 0}
       });
     JAVASCRIPT
   end
