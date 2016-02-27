@@ -1,2 +1,14 @@
 h1
-  | Hello
+  = @meeting.title
+
+.items
+  - @meeting.items.each do |item|
+    .panel.panel-default.item
+      .panel-heading
+        = item.title
+      .panel-body
+        = image_tag item.image.url
+
+        div.description
+          =m item.description
+

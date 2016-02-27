@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   # mount ActionCable.server => '/cable'
 
   root to: 'home#index'
+
+  mount PostgresqlLoStreamer::Engine => '/images'
 end
