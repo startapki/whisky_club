@@ -3,3 +3,5 @@
 #= require turbolinks
 #= require bootstrap-sprockets
 #= require cable
+#= require jquery.raty
+#= require alertify

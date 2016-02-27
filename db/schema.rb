@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(version: 20160227180151) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "value"
+    t.text     "comment"
+    t.integer  "user_id",    null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["item_id"], name: "index_ratings_on_item_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -65,4 +77,6 @@ ActiveRecord::Schema.define(version: 20160227180151) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "items", "meetings"
+  add_foreign_key "ratings", "items"
+  add_foreign_key "ratings", "users"
 end

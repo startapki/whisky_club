@@ -1,4 +1,6 @@
 AllCops:
+  TargetRubyVersion: 2.3
+
   Exclude:
     - 'bin/**/*'
     - 'config/**/*'
@@ -7,6 +9,9 @@ AllCops:
     - 'Guardfile'
     - 'db/schema.rb'
 
+Rails:
+  Enabled: true
+
 Metrics/LineLength:
   Max: 110
 
@@ -14,4 +19,7 @@ Style/Documentation:
   Enabled: false
 
 Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false

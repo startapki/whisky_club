@@ -21,5 +21,9 @@ module WhiskyClub
 
       Devise::Mailer.layout 'mailer'
     end
+
+    config.after_initialize do
+      ActionView::Base.default_form_builder = ::FormBuilder
+    end
   end
 end
