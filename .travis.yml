@@ -1,0 +1,13 @@
+language: ruby
+bundler_args: --deployment --without production --retry=3
+cache: bundler
+before_install:
+  - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+before_script:
+  - rake db:setup
+script:
+  - bundle exec rubocop -R .
+  - bundle exec rake
+addons:
+  code_climate:
+    repo_token: 56d198854bfcff200d010a85
