@@ -19,7 +19,7 @@ module WhiskyClub
         Devise::PasswordsController
       ].each { |controller| controller.layout 'devise' }
 
-      Devise::Mailer.layout 'mail'
+      Devise::Mailer.layout 'mailer'
     end
   end
 end

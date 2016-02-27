@@ -20,6 +20,9 @@ en:
         account_locked: 'Your account has been locked due to an excessive number of unsuccessful sign in attempts.'
         click_to_unlock: 'Click the link below to unlock your account:'
         unlock_account: 'Unlock my account'
+      password_change:
+        hello: 'Hello'
+        password_changed: 'We''re contacting you to notify you that your password has been changed.'
 
     passwords:
       edit:
