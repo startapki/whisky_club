@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  username: postgres
+  password:
+  host: localhost
+
+development:
+  <<: *default
+  database: whisky_club_development
+
+test:
+  <<: *default
+  database: whisky_club_test
