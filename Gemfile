@@ -28,7 +28,13 @@ gem 'devise_invitable', github: 'scambra/devise_invitable'
 
 gem 'administrate', github: 'hayesr/administrate', branch: 'rails5_compat'
 gem 'acts_as_list', '~> 0.7.2'
+
 gem 'russian', '~> 0.6.0'
+
+gem 'carrierwave'
+gem 'carrierwave-postgresql'
+gem 'postgresql_lo_streamer'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160227160900) do
     t.integer  "position"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "image"
     t.integer  "meeting_id"
   end
 
