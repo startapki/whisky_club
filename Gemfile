@@ -38,6 +38,8 @@ gem 'mini_magick'
 
 gem 'redcarpet'
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'byebug'
 end
