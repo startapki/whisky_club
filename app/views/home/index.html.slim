@@ -14,7 +14,7 @@ h1
               = image_tag item.image.url
 
               div.description
-                =m item.description
+                =m item.description.to_s
 
             - if current_user.present?
               .panel-footer
