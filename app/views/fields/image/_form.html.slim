@@ -1,4 +1,5 @@
 .field-unit__label
   = f.label field.attribute
 .field-unit__field
+  = image_tag f.object.send(field.attribute)
   = f.file_field field.attribute

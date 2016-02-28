@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :meeting
-  has_many :ratings
+
+  has_many :ratings, dependent: :destroy
 
   acts_as_list scope: :meeting
 

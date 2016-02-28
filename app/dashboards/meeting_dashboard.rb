@@ -43,8 +43,7 @@ class MeetingDashboard < Administrate::BaseDashboard
 
   # Overwrite this method to customize how meetings are displayed
   # across all pages of the admin dashboard.
-  #
-  # def display_resource(meeting)
-  #   "Meeting ##{meeting.id}"
-  # end
+  def display_resource(meeting)
+    meeting.title
+  end
 end

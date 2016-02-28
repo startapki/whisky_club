@@ -1,4 +1,8 @@
 ru:
   nav:
     sign_in: 'Войти'
+    admin: 'Админка'
     logout: 'Выйти'
+  home:
+    empty:
+      no_meetings: 'Нет заседаний'
