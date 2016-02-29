@@ -1,12 +1,12 @@
 doctype html
 html
   head
-    title
-      = t('.name')
+    title WhiskyClub
+    = csrf_meta_tags
+    = action_cable_meta_tag
 
     = stylesheet_link_tag 'devise', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'devise', 'data-turbolinks-track' => true
-    = csrf_meta_tags
 
   body
     #container
