@@ -23,11 +23,11 @@ nav#navbar.navbar.navbar-default role="navigation"
                 li
                   = link_to admin_root_path, data: { turbolinks: false }
                     .glyphicon.glyphicon-cog
-                    =t 'nav.admin'
+                    =<t 'nav.admin'
               li
                 = link_to destroy_user_session_path, method: :delete
                   .glyphicon.glyphicon-off
-                  =t 'nav.logout'
+                  =<t 'nav.logout'
         - else
           li
             = link_to new_user_session_path, data: { turbolinks: false }
