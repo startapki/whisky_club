@@ -2,8 +2,7 @@
   = f.hidden_field :item_id
 
   .form-group
-    .raty
-      = f.raty_field :value
+    = f.text_field :value, class: 'slider'
 
   .form-group
     = f.text_area :comment, class: "form-control auto-expand"

@@ -42,6 +42,7 @@ gem 'newrelic_rpm'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery.textarea.autoresize'
+  gem 'rails-assets-ionrangeslider'
 end
 
 group :development, :test do
