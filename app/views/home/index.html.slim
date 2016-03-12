@@ -17,7 +17,7 @@ h1
                 =m item.description.to_s
 
               span
-                b= item.ratings.average(:value)
+                b= item.ratings.average(:value).try(:round, 1)
 
             - if current_user.present?
               .panel-footer
