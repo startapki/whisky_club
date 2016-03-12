@@ -40,6 +40,10 @@ gem 'redcarpet'
 
 gem 'newrelic_rpm'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery.textarea.autoresize'
+end
+
 group :development, :test do
   gem 'byebug'
 end
