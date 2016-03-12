@@ -24,6 +24,7 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
         remember_me: 'Запомнить меня'
+        admin: 'Администратор'
       meeting:
         title: 'Название'
         items: 'Бутылки'

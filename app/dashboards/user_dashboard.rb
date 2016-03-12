@@ -11,7 +11,8 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     email: Field::String,
     name: Field::String,
-    last_sign_in_at: Field::DateTime
+    last_sign_in_at: Field::DateTime,
+    admin: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,7 +23,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :name,
     :email,
-    :last_sign_in_at
+    :last_sign_in_at,
+    :admin
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -30,7 +32,8 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :name,
     :email,
-    :last_sign_in_at
+    :last_sign_in_at,
+    :admin
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -38,7 +41,8 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :email
+    :email,
+    :admin
   ].freeze
 
   # Overwrite this method to customize how users are displayed
