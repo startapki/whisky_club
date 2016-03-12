@@ -16,6 +16,9 @@ h1
               div.description
                 =m item.description.to_s
 
+              span
+                b= item.ratings.average(:value)
+
             - if current_user.present?
               .panel-footer
                 = render 'ratings/form', rating: current_user.ratings.find_or_initialize_by(item: item)
