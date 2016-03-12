@@ -1,5 +1,8 @@
 .field-unit__label
   = f.label field.attribute
 .field-unit__field
-  = image_tag f.object.send(field.attribute)
+  - image = f.object.send(field.attribute)
+  - if image.present?
+    = image_tag image, class: 'form-image'
   = f.file_field field.attribute
+
