@@ -9,6 +9,8 @@ module Admin
     before_action :authenticate_user!
     before_action :authenticate_admin
 
+    helper MarkdownHelper
+
     def authenticate_admin
       redirect_to root_path unless current_user.admin?
     end

@@ -11,9 +11,9 @@ class ItemDashboard < Administrate::BaseDashboard
     meeting: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
-    description: Field::Text,
+    description: MarkdownField,
     image: Field::Image,
-    position: Field::PositionField,
+    position: PositionField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -24,9 +24,9 @@ class ItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :image,
     :meeting,
     :title,
-    :description,
     :position
   ].freeze
 
