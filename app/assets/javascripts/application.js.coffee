@@ -5,3 +5,7 @@
 #= require cable
 #= require jquery.raty
 #= require alertify
+#= require jquery.textarea.autoresize
+
+$ ->
+  $('.auto-expand').autoresize()

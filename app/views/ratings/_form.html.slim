@@ -1,13 +1,12 @@
-= form_for rating, remote: true, html: { class: 'form-inline rating-form' } do |f|
+= form_for rating, remote: true, html: { class: 'rating-form' } do |f|
   = f.hidden_field :item_id
 
   .form-group
-    .input-group
-      span.input-group-btn.raty
-        = f.raty_field :value
+    .raty
+      = f.raty_field :value
 
-      = f.text_field :comment, class: 'form-control'
+  .form-group
+    = f.text_area :comment, class: "form-control auto-expand"
 
-      span.input-group-btn
-        = f.button class: 'btn btn-primary'
-          .glyphicon.glyphicon-ok
+  .form-group
+    = f.button t('helpers.submit.save'), class: 'btn btn-primary btn-block'

@@ -6,3 +6,4 @@ ru:
       create: "Создать %{model}"
       update: "Обновить %{model}"
       submit: "Сохранить %{model}"
+      save: "Сохранить"
