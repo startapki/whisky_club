@@ -9,9 +9,7 @@ Rails.application.routes.draw do
     root to: 'meetings#index'
   end
 
-  resources :meetings do
-    resources :items
-  end
+  resources :meetings, only: :index
 
   resources :ratings, only: [:create, :update]
 
