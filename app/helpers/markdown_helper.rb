@@ -17,7 +17,7 @@ module MarkdownHelper
     renderer = Redcarpet::Render::HTML.new(OPTIONS)
     markdown = Redcarpet::Markdown.new(renderer, EXTENSIONS)
 
-    markdown.render(text).html_safe
+    markdown.render(text.to_s).html_safe
   end
 
   alias m markdown
