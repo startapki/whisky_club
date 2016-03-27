@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'sessions' }
 
   namespace :admin do
     resources :meetings
     resources :items
     resources :users
 
-    root to: "meetings#index"
+    root to: 'meetings#index'
   end
 
   resources :meetings do

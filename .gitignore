@@ -23,3 +23,5 @@
 config/database.yml
 
 config/database.yml
+
+.tags*

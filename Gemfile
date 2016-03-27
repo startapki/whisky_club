@@ -39,6 +39,7 @@ gem 'mini_magick'
 gem 'redcarpet'
 
 gem 'newrelic_rpm'
+gem 'mengpaneel'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery.textarea.autoresize'
