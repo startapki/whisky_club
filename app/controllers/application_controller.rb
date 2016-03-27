@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_for_mixpanel
-    first_name, last_name = current_user.name.split(' ', 2)
+    first_name, last_name = current_user.name.to_s.split(' ', 2)
     {
       'ID'              => current_user.id,
       '$email'          => current_user.email,

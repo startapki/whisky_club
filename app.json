@@ -1,0 +1,34 @@
+{
+  "name": "whisky_club",
+  "scripts": {
+    "postdeploy": "bin/rake db:migrate db:seed"
+  },
+  "env": {
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "STAGING": "true"
+  },
+  "addons": [
+    "papertrail",
+    "heroku-postgresql",
+    "sendgrid"
+  ],
+  "buildpacks": [
+    {
+      "url": "urn:buildpack:heroku/ruby"
+    }
+  ]
+}
