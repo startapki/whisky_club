@@ -43,6 +43,8 @@ gem 'mengpaneel'
 
 gem 'faker'
 
+gem 'jquery-turbolinks'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery.textarea.autoresize'
   gem 'rails-assets-ionrangeslider'
