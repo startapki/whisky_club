@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
 #= require turbolinks
 #= require bootstrap-sprockets
@@ -8,10 +9,13 @@
 #= require jquery.textarea.autoresize
 #= require ionrangeslider
 
-$ ->
+ready = ->
   $('.auto-expand').autoresize()
   $('.slider').ionRangeSlider(
     grid: true,
     min: 60,
     max: 100
   )
+
+$ ->
+  ready()
