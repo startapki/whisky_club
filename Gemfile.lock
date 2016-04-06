@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: db901399f2ec411ab5dd6795f277ae26c1d7380e
+  revision: b397d33246ae3dbc725f681a3f718a20d34313af
   specs:
     devise (4.0.0.rc2)
       bcrypt (~> 3.0)
@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: git://github.com/scambra/devise_invitable.git
-  revision: 63c12ed868bb836cda12f7f48df9dfc31ee58114
+  revision: eb2df2df542500b508ffad8cfc20cbdc89785611
   specs:
     devise_invitable (1.5.5)
       actionmailer (>= 3.2.6, < 5)
@@ -87,7 +87,7 @@ GEM
     addressable (2.4.0)
     arel (7.0.0)
     ast (2.2.0)
-    autoprefixer-rails (6.3.3.1)
+    autoprefixer-rails (6.3.6)
       execjs
     bcrypt (3.1.11)
     bootstrap-sass (3.3.6)
@@ -97,7 +97,7 @@ GEM
       sass (~> 3.4)
       thor (~> 0.19)
     builder (3.2.2)
-    byebug (8.2.2)
+    byebug (8.2.4)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -150,14 +150,16 @@ GEM
       rb-inotify (>= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.3)
-      mime-types (>= 1.16, < 3)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
     mengpaneel (0.0.2)
       activesupport
       mixpanel-ruby
     method_source (0.8.2)
-    mime-types (2.99.1)
-    mini_magick (4.4.0)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0221)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     mixpanel-ruby (2.2.0)
@@ -167,19 +169,19 @@ GEM
     neat (1.7.4)
       bourbon (>= 4.0)
       sass (>= 3.3)
-    newrelic_rpm (3.15.0.314)
+    newrelic_rpm (3.15.1.316)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     normalize-rails (3.0.3)
     orm_adapter (0.5.0)
-    parser (2.3.0.6)
+    parser (2.3.0.7)
       ast (~> 2.2)
     pg (0.18.4)
     postgresql_lo_streamer (0.1.2)
       rails (>= 3.2.8)
     powerpack (0.1.1)
-    puma (3.1.0)
+    puma (3.4.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (2.0.0.alpha)
@@ -200,7 +202,7 @@ GEM
       sprockets-rails (>= 2.0.0)
     rails-assets-ionrangeslider (2.1.2)
       rails-assets-jquery (>= 1.8)
-    rails-assets-jquery (2.2.1)
+    rails-assets-jquery (2.2.3)
     rails-assets-jquery.textarea.autoresize (0.1.1)
       rails-assets-jquery
     rails-deprecated_sanitizer (1.0.3)
@@ -215,7 +217,7 @@ GEM
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.4)
+    rails_stdout_logging (0.0.5)
     railties (5.0.0.beta3)
       actionpack (= 5.0.0.beta3)
       activesupport (= 5.0.0.beta3)
@@ -223,15 +225,15 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (2.1.0)
-    rake (11.1.0)
+    rake (11.1.2)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     redcarpet (3.3.4)
-    responders (2.1.1)
+    responders (2.1.2)
       railties (>= 4.2.0, < 5.1)
-    rubocop (0.38.0)
-      parser (>= 2.3.0.6, < 3.0)
+    rubocop (0.39.0)
+      parser (>= 2.3.0.7, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.7)
@@ -239,7 +241,7 @@ GEM
     ruby-progressbar (1.7.5)
     russian (0.6.0)
       i18n (>= 0.5.0)
-    sass (3.4.21)
+    sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -265,7 +267,7 @@ GEM
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
       spring (~> 1.2)
-    sprockets (3.5.2)
+    sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.0.4)
@@ -280,10 +282,9 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.7.2)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
-    unicode-display_width (1.0.2)
+    uglifier (3.0.0)
+      execjs (>= 0.3.0, < 3)
+    unicode-display_width (1.0.3)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (3.1.1)
