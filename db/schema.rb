@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409141132) do
+ActiveRecord::Schema.define(version: 20160409145454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 20160409141132) do
   end
 
   add_index "attribute_kinds", ["kind_id"], name: "index_attribute_kinds_on_kind_id", using: :btree
+
+  create_table "attribute_values", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "attribute_kind_id"
+    t.integer  "possible_value_id"
+    t.text     "value"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "attribute_values", ["attribute_kind_id"], name: "index_attribute_values_on_attribute_kind_id", using: :btree
+  add_index "attribute_values", ["item_id"], name: "index_attribute_values_on_item_id", using: :btree
+  add_index "attribute_values", ["possible_value_id"], name: "index_attribute_values_on_possible_value_id", using: :btree
 
   create_table "items", force: :cascade do |t|
     t.text     "title"
@@ -105,6 +118,9 @@ ActiveRecord::Schema.define(version: 20160409141132) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "attribute_kinds", "kinds"
+  add_foreign_key "attribute_values", "attribute_kinds"
+  add_foreign_key "attribute_values", "items"
+  add_foreign_key "attribute_values", "possible_values"
   add_foreign_key "items", "kinds"
   add_foreign_key "items", "meetings"
   add_foreign_key "possible_values", "attribute_kinds"
