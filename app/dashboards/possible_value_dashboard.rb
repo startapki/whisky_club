@@ -1,6 +1,6 @@
 require 'administrate/base_dashboard'
 
-class KindDashboard < Administrate::BaseDashboard
+class PossibleValueDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,12 +8,11 @@ class KindDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    attribute_kind: Field::BelongsTo,
     id: Field::Number,
-    name: Field::String,
+    value: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-    items: Field::HasMany,
-    attribute_kinds: Field::HasMany
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,33 +21,34 @@ class KindDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :name,
-    :attribute_kinds,
+    :attribute_kind,
+    :id,
+    :value,
     :created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :attribute_kind,
     :id,
-    :name,
+    :value,
     :created_at,
-    :updated_at,
-    :attribute_kinds,
-    :items
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :name
+    :attribute_kind,
+    :value
   ].freeze
 
-  # Overwrite this method to customize how kinds are displayed
+  # Overwrite this method to customize how possible values are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(kind)
-    kind.name.to_s
-  end
+  # def display_resource(possible_value)
+  #   "PossibleValue ##{possible_value.id}"
+  # end
 end

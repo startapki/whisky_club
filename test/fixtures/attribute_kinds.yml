@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  kind: alcohol
+  attribute_meta: 0
+
+two:
+  name: MyString
+  kind: tobacco
+  attribute_meta: 1
