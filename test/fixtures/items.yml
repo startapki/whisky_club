@@ -5,9 +5,11 @@ one:
   description: MyText
   meeting: one
   position: 1
+  kind: alcohol
 
 two:
   title: MyText
   description: MyText
   meeting: two
   position: 1
+  kind: tobacco

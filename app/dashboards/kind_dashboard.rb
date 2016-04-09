@@ -1,6 +1,6 @@
 require 'administrate/base_dashboard'
 
-class ItemDashboard < Administrate::BaseDashboard
+class KindDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,15 +8,11 @@ class ItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    meeting: Field::BelongsTo,
-    kind: Field::BelongsTo,
     id: Field::Number,
-    title: Field::String,
-    description: MarkdownField,
-    image: Field::Image,
-    position: PositionField,
+    name: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    items: Field::HasMany
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,41 +21,31 @@ class ItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :image,
-    :meeting,
-    :kind,
-    :title,
-    :position
+    :name,
+    :created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :meeting,
-    :kind,
-    :image,
-    :title,
-    :description,
-    :position,
+    :id,
+    :name,
     :created_at,
-    :updated_at
+    :updated_at,
+    :items
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :meeting,
-    :kind,
-    :title,
-    :description,
-    :image,
-    :position
+    :name
   ].freeze
 
-  # Overwrite this method to customize how items are displayed
+  # Overwrite this method to customize how kinds are displayed
   # across all pages of the admin dashboard.
-  def display_resource(item)
-    item.title
+  #
+  def display_resource(kind)
+    kind.name.to_s
   end
 end
