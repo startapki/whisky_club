@@ -1,6 +1,6 @@
 require 'administrate/base_dashboard'
 
-class ItemDashboard < Administrate::BaseDashboard
+class AttributeValueDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,14 +8,11 @@ class ItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    meeting: Field::BelongsTo,
-    kind: Field::BelongsTo,
-    attribute_values: AttributeValueField,
+    item: Field::BelongsTo,
+    attribute_kind: Field::BelongsTo,
+    possible_value: Field::BelongsTo,
     id: Field::Number,
-    title: Field::String,
-    description: MarkdownField,
-    image: Field::Image,
-    position: PositionField,
+    value: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -26,43 +23,38 @@ class ItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :image,
-    :meeting,
-    :kind,
-    :attribute_values,
-    :title,
-    :position
+    :item,
+    :attribute_kind,
+    :value,
+    :id
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :meeting,
-    :kind,
-    :image,
-    :title,
-    :description,
-    :position,
+    :item,
+    :attribute_kind,
+    :possible_value,
+    :id,
+    :value,
     :created_at,
-    :updated_at,
-    :attribute_values
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :meeting,
-    :kind,
-    :title,
-    :description,
-    :image,
-    :position
+    :item,
+    :attribute_kind,
+    :possible_value,
+    :value
   ].freeze
 
-  # Overwrite this method to customize how items are displayed
+  # Overwrite this method to customize how attribute values are displayed
   # across all pages of the admin dashboard.
-  def display_resource(item)
-    item.title
-  end
+  #
+  # def display_resource(attribute_value)
+  #   "AttributeValue ##{attribute_value.id}"
+  # end
 end

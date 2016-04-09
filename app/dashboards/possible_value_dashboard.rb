@@ -48,7 +48,7 @@ class PossibleValueDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how possible values are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(possible_value)
-  #   "PossibleValue ##{possible_value.id}"
-  # end
+  def display_resource(possible_value)
+    possible_value.value
+  end
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :attribute_kinds
     resources :possible_values
     resources :items
+    resources :attribute_values
     resources :users
 
     root to: 'meetings#index'
