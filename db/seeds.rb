@@ -20,6 +20,8 @@ if Rails.env.development? || ENV['STAGING'] == 'true'
     name: Faker::Name.name
   )
 
+  4.times { Kind.create!(name: Faker::StarWars.vehicle) }
+
   2.times do
     meeting = Meeting.create!(
       title: Faker::StarWars.planet
@@ -33,6 +35,7 @@ if Rails.env.development? || ENV['STAGING'] == 'true'
         title: Faker::StarWars.character,
         description: Faker::StarWars.quote,
         meeting: meeting,
+        kind: Kind.all.sample,
         image: File.open(images.next)
       )
     end

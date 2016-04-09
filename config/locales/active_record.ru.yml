@@ -2,20 +2,25 @@ ru:
   activerecord:
     models:
       user:
-        one: 'Пользователь'
+        one: 'пользователя'
         few: 'Пользователя'
         many: 'Пользователи'
         other: 'Пользователей'
       meeting:
-        one: 'Заседание'
+        one: 'заседание'
         few: 'Заседания'
         many: 'Заседания'
         other: 'Заседаний'
       item:
-        one: 'Бутылка'
-        few: 'Бутылки'
-        many: 'Бутылки'
-        other: 'Бутылок'
+        one: 'позицию'
+        few: 'Позиции'
+        many: 'Позиции'
+        other: 'Позиций'
+      kind:
+        one: 'вид позиции'
+        few: 'Виды позиций'
+        many: 'Виды позиций'
+        other: 'Видов позиций'
 
     attributes:
       user:
@@ -35,7 +40,13 @@ ru:
         description: 'Описание'
         meeting: 'Заседание'
         meeting_id: 'Заседание'
+        kind: 'Вид позиции'
+        kind_id: 'Вид позиции'
         image: 'Изображение'
         position: 'Позиция'
+        created_at: 'Создано'
+        updated_at: 'Обновлено'
+      kind:
+        name: 'Название'
         created_at: 'Создано'
         updated_at: 'Обновлено'
