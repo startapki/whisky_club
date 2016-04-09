@@ -15,6 +15,11 @@ h1
 
               div.description
                 =m item.description.to_s
+                dl
+                  - item.attribute_values.each do |attr_value|
+                    dt= attr_value.attribute_kind.name
+                    dd= attr_value.value
+
 
               span
                 b= item.ratings.average(:value).try(:round, 1)

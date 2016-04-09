@@ -37,12 +37,17 @@ if Rails.env.development? || ENV['STAGING'] == 'true'
     images = Dir.glob(Rails.root.join(images_path)).sort.cycle
 
     5.times do
+      kind = Kind.all.sample
+      attribute_values_attributes = kind.attribute_kinds.reduce([]) do |a, e|
+        a << { attribute_kind: e, possible_value: e.possible_values.sample }
+      end
       Item.create!(
         title: Faker::StarWars.character,
         description: Faker::StarWars.quote,
         meeting: meeting,
-        kind: Kind.all.sample,
-        image: File.open(images.next)
+        kind: kind,
+        image: File.open(images.next),
+        attribute_values_attributes: attribute_values_attributes
       )
     end
   end
