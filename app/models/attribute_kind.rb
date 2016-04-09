@@ -1,7 +1,7 @@
 class AttributeKind < ApplicationRecord
   belongs_to :kind
 
-  has_many :possible_values
+  has_many :possible_values, dependent: :destroy
 
   validates :name, presence: true
   validates :kind, presence: true
