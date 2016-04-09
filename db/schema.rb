@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409145454) do
+ActiveRecord::Schema.define(version: 20160409190303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,29 @@ ActiveRecord::Schema.define(version: 20160409145454) do
 
   add_index "items", ["kind_id"], name: "index_items_on_kind_id", using: :btree
   add_index "items", ["meeting_id"], name: "index_items_on_meeting_id", using: :btree
+
+  create_table "items_identities", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "name"
+    t.float    "rating"
+    t.float    "cost"
+    t.jsonb    "classification", default: {}, null: false
+    t.jsonb    "location",       default: {}, null: false
+    t.jsonb    "info",           default: {}, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "items_passports", force: :cascade do |t|
+    t.integer  "item_id",     null: false
+    t.integer  "identity_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "items_passports", ["identity_id"], name: "index_items_passports_on_identity_id", using: :btree
+  add_index "items_passports", ["item_id", "identity_id"], name: "index_items_passports_on_item_id_and_identity_id", unique: true, using: :btree
+  add_index "items_passports", ["item_id"], name: "index_items_passports_on_item_id", using: :btree
 
   create_table "kinds", force: :cascade do |t|
     t.text     "name"
@@ -123,6 +146,8 @@ ActiveRecord::Schema.define(version: 20160409145454) do
   add_foreign_key "attribute_values", "possible_values"
   add_foreign_key "items", "kinds"
   add_foreign_key "items", "meetings"
+  add_foreign_key "items_passports", "items"
+  add_foreign_key "items_passports", "items_identities", column: "identity_id"
   add_foreign_key "possible_values", "attribute_kinds"
   add_foreign_key "ratings", "items"
   add_foreign_key "ratings", "users"

@@ -10,6 +10,8 @@ module WhiskyClub
   class Application < Rails::Application
     config.i18n.default_locale = :ru
 
+    config.paths.add 'lib', eager_load: true
+
     config.to_prepare do
       [
         Devise::SessionsController,
