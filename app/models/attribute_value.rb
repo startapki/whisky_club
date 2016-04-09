@@ -6,6 +6,6 @@ class AttributeValue < ApplicationRecord
   validates :attribute_kind, presence: true
 
   def value
-    super || possible_value.try(:value)
+    super.present? ? super : possible_value.try(:value)
   end
 end
