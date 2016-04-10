@@ -7,7 +7,7 @@ class Notification < ActiveRecord::Base
   private
 
   def set_emails
-    self.emails = User.pluck(:email)
+    self.emails = User.invitation_accepted.pluck(:email)
   end
 
   def deliver
