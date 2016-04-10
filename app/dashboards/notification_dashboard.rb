@@ -9,7 +9,7 @@ class NotificationDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     subject: Field::String,
-    text: MerkdownField,
+    text: MarkdownField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
