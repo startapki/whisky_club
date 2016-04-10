@@ -88,6 +88,14 @@ ActiveRecord::Schema.define(version: 20160409190303) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string   "subject",                 null: false
+    t.text     "text"
+    t.string   "emails",     default: [], null: false, array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "possible_values", force: :cascade do |t|
     t.string   "value"
     t.integer  "attribute_kind_id"

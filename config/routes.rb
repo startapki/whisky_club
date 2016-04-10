@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :items
     resources :attribute_values
     resources :users
+    resources :notifications
 
     root to: 'meetings#index'
   end

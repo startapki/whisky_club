@@ -36,6 +36,11 @@ ru:
         few: 'Атрибутов'
         many: 'Атрибуты'
         other: 'Атрибуты'
+      notification:
+        one: 'рассылка'
+        few: 'Рассылки'
+        many: 'Рассылки'
+        other: 'Рассылки'
 
     attributes:
       user:
@@ -63,5 +68,10 @@ ru:
         updated_at: 'Обновлено'
       kind:
         name: 'Название'
+        created_at: 'Создано'
+        updated_at: 'Обновлено'
+      notification:
+        subject: 'Тема'
+        text: 'Текст'
         created_at: 'Создано'
         updated_at: 'Обновлено'

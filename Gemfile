@@ -38,6 +38,8 @@ gem 'mini_magick'
 
 gem 'redcarpet'
 
+gem 'sucker_punch', '< 2.0'
+
 gem 'newrelic_rpm'
 gem 'mengpaneel'
 
