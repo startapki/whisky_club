@@ -11,6 +11,6 @@ class Notification < ActiveRecord::Base
   end
 
   def deliver
-    NotificationsMailer.created(self, emails).deliver_now
+    NotificationsMailer.created(self, emails).deliver_later
   end
 end
