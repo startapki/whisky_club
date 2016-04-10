@@ -10,6 +10,7 @@ script:
 - bundle exec rubocop -R .
 - bundle exec rake
 addons:
+  postgresql: '9.4'
   code_climate:
     repo_token: 0a6cbebf6baa9b1e41fced28adf1a92594c5a12df37fccdde186c66491a70e31
 notifications:
