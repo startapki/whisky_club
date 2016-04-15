@@ -35,7 +35,7 @@ class RatingsController < ApplicationController
   end
 
   def track_rating(verb = 'Add')
-    opts = { 'Item ID' => @rating.item_id, 'Meeting ID' => @rating.item.try(:meething_id) }
+    opts = { 'Item ID' => @rating.item_id, 'Meeting ID' => @rating.item.try(:meeting_id) }
     mixpanel.track("#{verb} Comment", opts) unless @rating.comment.blank?
     mixpanel.track("#{verb} Rating", opts.merge('Value' => @rating.value)) if @rating.value.to_i > 0
   end
