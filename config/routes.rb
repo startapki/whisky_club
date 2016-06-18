@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :meetings, only: :index
+  resources :items, only: :index
 
   resources :ratings, only: [:create, :update]
 
