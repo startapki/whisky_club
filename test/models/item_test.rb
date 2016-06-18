@@ -10,15 +10,15 @@ class ItemTest < ActiveSupport::TestCase
   test 'save with attribute value' do
     attr_values = {
       attribute_values_attributes: [
-        { attribute_kind: attribute_kinds(:one), value: 'foo' },
-        { attribute_kind: attribute_kinds(:two), possible_value: possible_values(:two) }
+        { attribute_kind: attributes_attribute_kinds(:one), value: 'foo' },
+        { attribute_kind: attributes_attribute_kinds(:two), possible_value: attributes_possible_values(:two) }
       ]
     }
     item = Item.create(valid_attributes.merge(attr_values))
 
     assert item.persisted?, item.errors.full_messages
     assert_equal 'foo', item.attribute_values.first.value
-    assert_equal possible_values(:two).value, item.attribute_values.last.value
+    assert_equal attributes_possible_values(:two).value, item.attribute_values.last.value
   end
 
   def images
@@ -30,7 +30,7 @@ class ItemTest < ActiveSupport::TestCase
     {
       title: Faker::StarWars.character,
       meeting: meetings(:current),
-      kind: kinds(:alcohol),
+      kind: attributes_kinds(:alcohol),
       image: File.open(images.next)
     }
   end

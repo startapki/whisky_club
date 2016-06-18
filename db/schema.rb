@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(version: 20160409190303) do
     t.integer  "attribute_meta", default: 0
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["kind_id"], name: "index_attribute_kinds_on_kind_id", using: :btree
   end
-
-  add_index "attribute_kinds", ["kind_id"], name: "index_attribute_kinds_on_kind_id", using: :btree
 
   create_table "attribute_values", force: :cascade do |t|
     t.integer  "item_id"
@@ -33,11 +32,10 @@ ActiveRecord::Schema.define(version: 20160409190303) do
     t.text     "value"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.index ["attribute_kind_id"], name: "index_attribute_values_on_attribute_kind_id", using: :btree
+    t.index ["item_id"], name: "index_attribute_values_on_item_id", using: :btree
+    t.index ["possible_value_id"], name: "index_attribute_values_on_possible_value_id", using: :btree
   end
-
-  add_index "attribute_values", ["attribute_kind_id"], name: "index_attribute_values_on_attribute_kind_id", using: :btree
-  add_index "attribute_values", ["item_id"], name: "index_attribute_values_on_item_id", using: :btree
-  add_index "attribute_values", ["possible_value_id"], name: "index_attribute_values_on_possible_value_id", using: :btree
 
   create_table "items", force: :cascade do |t|
     t.text     "title"
@@ -48,10 +46,9 @@ ActiveRecord::Schema.define(version: 20160409190303) do
     t.integer  "image"
     t.integer  "meeting_id"
     t.integer  "kind_id"
+    t.index ["kind_id"], name: "index_items_on_kind_id", using: :btree
+    t.index ["meeting_id"], name: "index_items_on_meeting_id", using: :btree
   end
-
-  add_index "items", ["kind_id"], name: "index_items_on_kind_id", using: :btree
-  add_index "items", ["meeting_id"], name: "index_items_on_meeting_id", using: :btree
 
   create_table "items_identities", force: :cascade do |t|
     t.string   "provider"
@@ -70,11 +67,10 @@ ActiveRecord::Schema.define(version: 20160409190303) do
     t.integer  "identity_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["identity_id"], name: "index_items_passports_on_identity_id", using: :btree
+    t.index ["item_id", "identity_id"], name: "index_items_passports_on_item_id_and_identity_id", unique: true, using: :btree
+    t.index ["item_id"], name: "index_items_passports_on_item_id", using: :btree
   end
-
-  add_index "items_passports", ["identity_id"], name: "index_items_passports_on_identity_id", using: :btree
-  add_index "items_passports", ["item_id", "identity_id"], name: "index_items_passports_on_item_id_and_identity_id", unique: true, using: :btree
-  add_index "items_passports", ["item_id"], name: "index_items_passports_on_item_id", using: :btree
 
   create_table "kinds", force: :cascade do |t|
     t.text     "name"
@@ -101,9 +97,8 @@ ActiveRecord::Schema.define(version: 20160409190303) do
     t.integer  "attribute_kind_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.index ["attribute_kind_id"], name: "index_possible_values_on_attribute_kind_id", using: :btree
   end
-
-  add_index "possible_values", ["attribute_kind_id"], name: "index_possible_values_on_attribute_kind_id", using: :btree
 
   create_table "ratings", force: :cascade do |t|
     t.float    "value"
@@ -112,10 +107,9 @@ ActiveRecord::Schema.define(version: 20160409190303) do
     t.integer  "item_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_ratings_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_ratings_on_user_id", using: :btree
   end
-
-  add_index "ratings", ["item_id"], name: "index_ratings_on_item_id", using: :btree
-  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -140,13 +134,12 @@ ActiveRecord::Schema.define(version: 20160409190303) do
     t.integer  "invitations_count",      default: 0
     t.string   "name"
     t.boolean  "admin",                  default: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
+    t.index ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
+    t.index ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
-  add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
-  add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "attribute_kinds", "kinds"
   add_foreign_key "attribute_values", "attribute_kinds"
