@@ -47,6 +47,8 @@ gem 'faker'
 
 gem 'jquery-turbolinks'
 
+gem 'nprogress-rails'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery.textarea.autoresize'
   gem 'rails-assets-ionrangeslider'

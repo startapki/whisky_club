@@ -8,6 +8,8 @@
 #= require alertify
 #= require jquery.textarea.autoresize
 #= require ionrangeslider
+#= require nprogress
+#= require nprogress-turbolinks
 
 ready = ->
   $('.auto-expand').autoresize()
