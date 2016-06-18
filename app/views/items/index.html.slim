@@ -9,6 +9,6 @@ h1 Items
   - AttributeKind.all.each do |a_kind|
     h4= a_kind.name
     ol
-    - a_kind.attribute_values.group_by(&:value).each do |value, a_values|
+    - attributes_grouped_by_value(a_kind).each do |value, a_values|
       li= link_to_if (params[:value] != value && params[:attribute_kind_id] != a_kind.id), \
         "#{value} (#{a_values.count})", items_url(attribute_kind_id: a_kind.id, value: value)

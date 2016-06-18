@@ -8,4 +8,12 @@ class AttributeValue < ApplicationRecord
   def value
     super.present? ? super : possible_value.try(:value)
   end
+
+  def searchable_value
+    if attribute_kind_id == 3
+      value.match(/\d+/).to_s + ' лет'
+    else
+      value.strip
+    end
+  end
 end
