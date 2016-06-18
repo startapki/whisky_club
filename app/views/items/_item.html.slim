@@ -1,0 +1,28 @@
+.col-md-6
+  .panel.panel-default.item
+    .panel-heading
+      = item.title
+
+    .panel-body
+      = image_tag item.image.url
+
+      div.description
+        =m item.description.to_s
+        dl
+          - item.attribute_values.each do |attr_value|
+            dt= attr_value.attribute_kind.name
+            dd= attr_value.value
+
+      span
+        b>= item.ratings.average(:value).try(:round, 1)
+        - if item.identity.present?
+          | (
+          i
+            => format_identity_rating item.identity.rating
+            | by
+            =< item.identity.provider
+          | )
+
+    - if current_user.present?
+      .panel-footer
+        = render 'ratings/form', rating: current_user.ratings.find_or_initialize_by(item: item)

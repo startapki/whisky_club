@@ -2,6 +2,10 @@ require 'rake'
 
 namespace :items do
   namespace :identities do
+    # Examples:
+    #   rake "items:identities:load[whiskyanalysis.com, whisky.csv]"
+    #
+    desc 'Load and parse data from third-party source.'
     task :load, [:provider, :source] => [:environment] do |_t, args|
       Rails.logger = Logger.new(STDOUT)
 

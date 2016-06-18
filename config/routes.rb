@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :users
     resources :notifications
 
+    get '/identities/:id', to: redirect('/admin/'), as: :identity
+
     root to: 'meetings#index'
   end
 

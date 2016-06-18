@@ -5,8 +5,7 @@ class Item < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :attribute_values, dependent: :destroy
 
-  has_many :passports, dependent: :destroy, class_name: 'Items::Passport'
-  has_many :identities, through: :passports, class_name: 'Items::Identity'
+  belongs_to :identity, optional: true
 
   acts_as_list scope: :meeting
 
