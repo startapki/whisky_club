@@ -14,7 +14,7 @@ nav#navbar.navbar.navbar-default role="navigation"
     #navbar_content.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-left
         = nav_link t(:current), root_path
-        = nav_link t(:archive), meetings_path
+        = nav_link t(:archive), items_path
       ul.nav.navbar-nav.navbar-right
         - if current_user.present?
           li.dropdown

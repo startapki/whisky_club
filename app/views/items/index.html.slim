@@ -1,0 +1,14 @@
+h1 Items
+
+.col-md-9
+  .items
+    - @items.each_slice(2) do |items|
+      .row= render items
+
+.col-md-3
+  - AttributeKind.all.each do |a_kind|
+    h4= a_kind.name
+    ol
+    - a_kind.attribute_values.group_by(&:value).each do |value, a_values|
+      li= link_to_if (params[:value] != value && params[:attribute_kind_id] != a_kind.id), \
+        "#{value} (#{a_values.count})", items_url(attribute_kind_id: a_kind.id, value: value)
