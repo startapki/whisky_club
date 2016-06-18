@@ -17,7 +17,8 @@ class ItemDashboard < Administrate::BaseDashboard
     image: Field::Image,
     position: PositionField,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    identity: Field::BelongsTo
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -45,7 +46,8 @@ class ItemDashboard < Administrate::BaseDashboard
     :position,
     :created_at,
     :updated_at,
-    :attribute_values
+    :attribute_values,
+    :identity
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -57,7 +59,8 @@ class ItemDashboard < Administrate::BaseDashboard
     :title,
     :description,
     :image,
-    :position
+    :position,
+    :identity
   ].freeze
 
   # Overwrite this method to customize how items are displayed

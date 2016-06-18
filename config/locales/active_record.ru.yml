@@ -66,6 +66,7 @@ ru:
         position: 'Позиция'
         created_at: 'Создано'
         updated_at: 'Обновлено'
+        identity_id: 'Привязка'
       kind:
         name: 'Название'
         created_at: 'Создано'
