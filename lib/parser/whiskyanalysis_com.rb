@@ -39,7 +39,7 @@ module Parser
     end
 
     def process_row(row)
-      instance = Items::Identity.find_or_initialize_by(
+      instance = Identity.find_or_initialize_by(
         name: row['Whisky'],
         provider: 'whiskyanalysis.com'
       )
