@@ -194,6 +194,7 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     normalize-rails (3.0.3)
+    nprogress-rails (0.1.6.7)
     orm_adapter (0.5.0)
     parser (2.3.1.2)
       ast (~> 2.2)
@@ -343,6 +344,7 @@ DEPENDENCIES
   mengpaneel
   mini_magick
   newrelic_rpm
+  nprogress-rails
   pg
   postgresql_lo_streamer
   puma
