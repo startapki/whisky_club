@@ -26,7 +26,7 @@ gem 'jbuilder'
 gem 'devise', github: 'plataformatec/devise'
 gem 'devise_invitable', github: 'scambra/devise_invitable'
 
-gem 'administrate', github: 'hayesr/administrate', branch: 'rails5_compat'
+gem 'administrate'
 gem 'acts_as_list'
 
 gem 'russian'
